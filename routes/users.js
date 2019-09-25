@@ -97,7 +97,8 @@ router.get('/logout', (req, res) => {
   res.redirect('/users/login');
 });
 router.post('/dangnhap',function(req,res){
-  User.findOne({email:email,password:password}).then((docs)=>{
+  
+  User.findOne({email:req.body.email,password:req.body.password}).then((docs)=>{
 res.send(docs)
   })
 })
