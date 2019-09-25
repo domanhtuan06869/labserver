@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const Usersa = new require('../models/user');
 // Load User model
 const { forwardAuthenticated } = require('../config/auth');
 
@@ -97,8 +98,10 @@ router.get('/logout', (req, res) => {
   res.redirect('/users/login');
 });
 router.post('/dangnhap',function(req,res){
-  
-  User.findOne({email:req.body.email,password:req.body.password}).then((docs)=>{
+
+console.log(req.body.email)
+  Usersa.findOne({email:req.body.email}).then((docs)=>{
+    
 res.send(docs)
   })
 })
