@@ -5,6 +5,15 @@ const ProductSchema = new mongoose.Schema({
     type: Array,
  
   },
+  animal:{
+    type:Array
+  }
+  ,nature:{
+    type:Array
+  },
+  flower:{
+    type:Array
+  }
 
 });
 
