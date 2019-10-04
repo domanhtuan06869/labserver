@@ -604,7 +604,7 @@ router.get('/edit',function(req,res){
   });
 
   router.get('/aa',function(req,res){
-    const  nwk =new Nwk({name:a})
+    const  nwk =new Nwk({urlimage:a})
  
   nwk.save(function(err){
 console.log(nwk)
@@ -612,7 +612,7 @@ res.send(nwk)
   })
 })
   router.get('/getlist',function(req,res){
-Nwk.findOne({_id:'5d961a1a0bedc10f6cdb5663'}).then((doc)=>{
+Nwk.findOne({_id:'5d96bcd085809d18282a8cea'}).then((doc)=>{
 res.send(doc.urlimage)
 })
   })
