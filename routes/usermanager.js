@@ -10,7 +10,7 @@ router.get('/',ensureAuthenticated , (req, res) =>{
   Userlogin.find({email:req.user.email}).then(docs=>{
     var user=JSON.parse(JSON.stringify(docs))
     var role=user[0].__v;
-  if(role==2){
+  if(role==0){
     
     Userlogin.find({}).then(docs=>{
       var user=JSON.parse(JSON.stringify(docs))
